@@ -43,17 +43,17 @@ In this challenge, you are to build a Smurfs village database utilizing Redux as
 #### reducers/index.js
   Add in the needed state and reducer cases to hold and modify smurf error messages, loading status and smurf data. **If at all possible, add in action cases one at a time, instead of all at once. Test your state connects and reducer cases as nessisary.**
 
-  * [ ] Adds the following state values into the initialState:
+  * [x] Adds the following state values into the initialState:
       - an array of smurfs
       - a boolean indicating if the app is loading
       - a string indicating a possible error message
 
-  * [ ] Add in the arguments needed to complete a standard reducer function.
-  * [ ] Add in a reducer case to accomidate the start of a smurf fetch.
-  * [ ] Add in a reducer case to accomidate the successful smurf api fetch.
-  * [ ] Add in a reducer cases to accomidate the failed smurf api fetch.
-  * [ ] Add in a reducer case to accomidate adding a smurf (including the name, nickname, position, summary and an internally generated id) into your smurf list.
-  * [ ] Add in a reducer case that adds in a value to the error message.
+  * [x] Add in the arguments needed to complete a standard reducer function.
+  * [x] Add in a reducer case to accomidate the start of a smurf fetch.
+  * [x] Add in a reducer case to accomidate the successful smurf api fetch.
+  * [x] Add in a reducer cases to accomidate the failed smurf api fetch.
+  * [x] Add in a reducer case to accomidate adding a smurf (including the name, nickname, position, summary and an internally generated id) into your smurf list.
+  * [x] Add in a reducer case that adds in a value to the error message.
 
 #### index.js
   Connect your application to reducer through redux with the thunk and logger middleware packages attached.
@@ -168,8 +168,21 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What problem does the context API help solve?
 
-  Makes it easier to pass props to components. 
-  
+  Makes it easier to pass props to components. It is much less setup than redux to pass components the props that they need. 
+
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
-3. What does `redux-thunk` allow us to do? How does it change our `action-creators`?
+
+Actions are a straightforward way to trigger your reducer function and pass in the data needed to update state. actions are the ONLY source of information for the store. 
+
+reducers are fancy switch cases that take in actions and typically modify state in some way based on the action and payload passed in. 
+
+store is the application state managed in a reducer file. it is centralized so that components can all pull from the store. 
+
+3. What does `redux-thunk` allow us to do? How does it change our `action-creators`?   
+
+It is almost like a debugger for an action, it allows asynchronous operations to complete before resuming the synchronous operations. 
+
 4. What is your favorite state management system you've learned and this sprint? Please explain why!
+
+I don't think I have a favorite, I am just glad to have more tools. I like prop drilling and context api for smaller scale things. They are both quick and easy to set up, but it is clear to me that they may not have the scalability of redux. I am surprised at how comfortable I feel with redux so far. I grasp the idea of actions, reducers, store and the connect function. 
+
