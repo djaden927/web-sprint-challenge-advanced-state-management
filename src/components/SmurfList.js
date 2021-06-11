@@ -11,12 +11,13 @@ import Smurf from './Smurf';
         return <h1>Loading...</h1>;
     }
 
-    return(<div className="listContainer">
+    return(
+    <div className="listContainer">
         {props.testSmurf.map((s,index) => {
-        return(
-        <Smurf key={index} smurf={s}/>
+            return(
+                <Smurf key={index} smurf={s}/>
             )
-    })}
+        })}
     </div>);
 }
 

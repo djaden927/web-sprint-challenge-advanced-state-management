@@ -13,18 +13,16 @@ export const ERR_MESSAGE = "ERR_MESSAGE";
 export const fetchSmurfs = () => {
     return (dispatch) => {
         
-        //1. Fetch_Start
-        // console.log("made it here")
+
         dispatch(fetchStart());
         
-        //2. fetch data from api
+
         axios.get('http://localhost:3333/smurfs')
         .then(res => {
             console.log(res.data)
             dispatch(fetchSuccess(res.data));
         })
         .catch(err=>{
-            //4. if fetch is not successful, Fetch_Fail with error message
             console.log(err)
             dispatch(fetchFail(err));
         });
@@ -34,7 +32,6 @@ export const fetchSmurfs = () => {
 
 
 export const fetchStart = ()=> {
-    // console.log("intheaction!!!!!")
     return({type: FETCH_START});
 }
 
